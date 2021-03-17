@@ -69,6 +69,7 @@ namespace AgeVerification_AboutUs.Steps
         [When(@"the User enters their birth date as (NONE|DATE), (NONE|MONTH) and (NONE|YEAR)")]
         public void WhenTheUserEntersTheirBirthDateAsDMY(string day, string month, string year) {
             Birthday entry = 0;
+            //0 means none selected
             entry = (Birthday)(
                 ((day.Equals("DATE"))? (int)Birthday.Date : 0) +
                 ((month.Equals("MONTH"))? (int)Birthday.Month : 0) +

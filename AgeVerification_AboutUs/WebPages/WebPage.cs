@@ -51,7 +51,7 @@ namespace AgeVerification_and_AboutUs.WebPages {
                     return false;
                 }});
                 return true;
-            } catch (Exception) {
+            } catch (TimeoutException) {
                 return false;
             }
         }

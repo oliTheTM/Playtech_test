@@ -59,34 +59,30 @@ namespace AgeVerification_and_AboutUs.WebPages
         /**
          * JS injection to manipulate drop-downs
          */
-        public void SelectDate(Birthday filter)
+        public void SelectDate(Birthday combination)
         {
-            string birthday = ((Birthday)filter).ToString();
-            if (Regex.IsMatch(birthday, @"Day"))
-            {
+            if (combination == Birthday.Date) {
                 if (!WaitUntilVisible(ageGate_Day))
                     throw (new ElementNotVisibleException("ageGate_Day"));
                 //pick a random day:
                 ((IJavaScriptExecutor)_driver).ExecuteScript(
-                    "args[0][args[1]].selected = true;",
+                    "arguments[0][arguments[1]].selected = true;",
                 ageGate_Day, Xu.Next(1, 31));
             }
-            if (Regex.IsMatch(birthday, @"Month"))
-            {
+            if (combination == Birthday.Month) {
                 if (!WaitUntilVisible(ageGate_Month))
                     throw (new ElementNotVisibleException("ageGate_Month"));
                 //pick a random month:
                 ((IJavaScriptExecutor)_driver).ExecuteScript(
-                    "args[0][args[1]].selected = true;",
+                    "arguments[0][arguments[1]].selected = true;",
                 ageGate_Month, Xu.Next(1, 12));
             }
-            if (Regex.IsMatch(birthday, @"Year"))
-            {
+            if (combination == Birthday.Year) {
                 if (!WaitUntilVisible(ageGate_Year))
                     throw (new ElementNotVisibleException("ageGate_Year"));
                 //pick a random year:
                 ((IJavaScriptExecutor)_driver).ExecuteScript(
-                    "args[0][args[1]].selected = true;",
+                    "arguments[0][arguments[1]].selected = true;",
                 ageGate_Year, Xu.Next(1921, 2021));
             }
         }
