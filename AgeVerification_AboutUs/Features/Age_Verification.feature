@@ -1,5 +1,5 @@
-﻿Feature: Age-Verification
-Verify that the functionality of the age-gate is correct.
+﻿Feature: Age-Verification & About-Us
+Verify that the functionality of said Features are correct.
 
 
 # Browser is grouped because continuous reloading of browsers hinders execution-time.
@@ -45,3 +45,10 @@ Examples:
 	|  Edge   | NONE | NONE  | YEAR |'Alert Message' |
 	|  Edge   | NONE | MONTH | NONE |'Alert Message' |
 	|  Edge   | DATE | MONTH | YEAR |'Modal is gone' |
+
+#After last test-case/\, browser won't refresh/clear-cookies
+
+Scenario: Validate About-Us
+	When the User clicks 'menu open'
+	And the User clicks 'About Us'
+	Then the User observes the ''

@@ -24,6 +24,17 @@ namespace AgeVerification_AboutUs.Steps
         }
 
 
+        [BeforeScenario()]
+        public void BeforeAVScenario() {
+            //only for the age-gate UC scenario
+            if (_scenarioContext.ScenarioInfo.Title.Equals("Verify Age-Gate")) {
+                //Refresh for next test-case:
+                User.WebBrowser.Manage().Cookies.DeleteAllCookies();
+                User.WebBrowser.Navigate();
+            }
+        }
+
+
         [Given("the User is on '(.*)'")]
         public void GivenUserUsing(string browser) =>
             User.ChangeBrowser(browser.ToBrowser());
@@ -77,14 +88,6 @@ namespace AgeVerification_AboutUs.Steps
                 else
                     throw (new SpecFlowException("Scenario Context missing: age-gate"));
             }
-        }
-
-
-        [AfterScenario()]
-        public void AfterAVScenario(){
-            if (_featureContext.FeatureInfo.Title.Equals("Age-Verification"))
-                //Refresh for next test-case:
-                User.WebBrowser.Navigate();
         }
     }
 }
