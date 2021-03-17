@@ -1,5 +1,6 @@
 ﻿using System;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 
 namespace AgeVerification_and_AboutUs.WebPages {
@@ -12,6 +13,7 @@ namespace AgeVerification_and_AboutUs.WebPages {
             _driver = driver;
             _driver.Url = url;
             _driver.Navigate();
+            initWebElements();
         }
         
         /**
@@ -20,12 +22,17 @@ namespace AgeVerification_and_AboutUs.WebPages {
          */
         public WebPage(IWebDriver driver) {
             _driver = driver;
-            if (Uri.TryCreate(_driver.Url, UriKind.Absolute, out Uri uri))
-                _driver.Navigate();
-            else
+            if (!Uri.TryCreate(_driver.Url, UriKind.Absolute, out Uri uri))
                 throw (new WebDriverException("Webdriver set to invalid URL: "+ _driver.Url));
+            initWebElements();
         }
 
+
+        /**
+         * Triggers web-driver web-element discovery
+         */
+        private void initWebElements() =>
+            PageFactory.InitElements(_driver, this);
 
         /**
          * This method waits until a select web-element appears

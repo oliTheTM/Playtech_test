@@ -4,17 +4,20 @@ using System.Text.RegularExpressions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace AgeVerification_and_AboutUs.WebPages { 
+namespace AgeVerification_and_AboutUs.WebPages 
+{ 
     public sealed class PlayTech_Home : WebPage
     {
-        //To pick random dates
+        /**
+         * For generating random dates
+         */
         private Random Xu;
 
         /**
-         * Remark, that the risk of a truncated Xpath being a non-unique address exponentially decreases w/r it's length.
-         * This is because the expected No. elements of a given context compounds at each level by the Law of Product.
+         * Remark, that the risk of a truncated Xpath being non-unique exponentially decreases w/r it's length.
+         * This is because the expected No. elements of a given context compounds this at each level; by Law of Product.
          */
-        [FindsBy(How =How.XPath, Using = "//section[1]/div[1]/div[1]/div[1]/div[1]/img[1]")]
+        [FindsBy(How =How.XPath, Using = "//html[1]/body[1]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/img[1]")]
         private IWebElement ageGate;
 
         [FindsBy(How = How.XPath, Using = "//div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/select[1]")]
