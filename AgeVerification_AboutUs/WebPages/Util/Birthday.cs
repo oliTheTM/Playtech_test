@@ -3,6 +3,6 @@
 namespace AgeVerification_and_AboutUs.WebPages.Util {  
     [Flags]
     public enum Birthday { 
-        Date = 1, Month = 2, Year = 4
+        Day = 1, Month = 2, InvalidMonth = 4, Year = 8
     }
 }

@@ -14,12 +14,10 @@ namespace AgeVerification_AboutUs.Steps
     [Binding]
     public sealed class AgeVerification
     {
-        private readonly FeatureContext _featureContext;
         private readonly ScenarioContext _scenarioContext;
 
 
-        public AgeVerification(FeatureContext featureContext, ScenarioContext scenarioContext) {
-            _featureContext = featureContext;
+        public AgeVerification(ScenarioContext scenarioContext) {
             _scenarioContext = scenarioContext;
         }
 
@@ -77,8 +75,10 @@ namespace AgeVerification_AboutUs.Steps
             Birthday entry = 0;
             //0 means none selected
             entry = (Birthday)(
-                ((day.Equals("DATE"))? (int)Birthday.Date : 0) +
-                ((month.Equals("MONTH"))? (int)Birthday.Month : 0) +
+                ((day.Equals("DATE"))? (int)Birthday.Day : 0) +
+                ((month.Equals("MONTH"))? (int)Birthday.Month : 
+                    ((month.Equals("INVALID_MONTH")) ? (int)Birthday.InvalidMonth : 0)
+                ) +
                 ((year.Equals("YEAR"))? (int)Birthday.Year : 0)
             );
             if (_scenarioContext.TryGetValue("home-page", out PlayTech_Home home)) {
