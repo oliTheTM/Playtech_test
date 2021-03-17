@@ -44,12 +44,14 @@ namespace AgeVerification_AboutUs.Steps
         public void ThenTheUserObservesThe(string webElement) {
             //safest way given you can't foresee combination of Gherkin statements:
             if (_scenarioContext.TryGetValue("home-page", out PlayTech_Home home)) {
-                if (webElement.Equals("Age-Gate Modal")) 
-                    home.AgeGateVisible().Should().BeTrue();   
+                if (webElement.Equals("Age-Gate Modal"))
+                    home.AgeGateVisible().Should().BeTrue();
                 else if (webElement.Equals("Alert Message"))
                     home.AlertVisible().Should().BeTrue();
                 else if (webElement.Equals("Modal is gone"))
                     home.AgeGateVisible().Should().BeFalse();
+                else if (webElement.Equals("Age Warning"))
+                    home.AgeWarningVisible();
                 else
                     throw (new SpecFlowException("Unknown web element: " + webElement));
             } else

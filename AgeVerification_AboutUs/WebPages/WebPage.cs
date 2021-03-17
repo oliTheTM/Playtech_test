@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
+using FluentAssertions;
 
 namespace AgeVerification_and_AboutUs.WebPages {
     public abstract class WebPage 
@@ -57,10 +58,8 @@ namespace AgeVerification_and_AboutUs.WebPages {
         }
     
         public void Click(IWebElement elem, string name) {
-            if (WaitUntilVisible(elem))
-                elem.Click();
-            else
-                throw(new ElementNotVisibleException(name));
+            WaitUntilVisible(elem).Should().BeTrue();
+            elem.Click();
         }
     }
 }

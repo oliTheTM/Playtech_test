@@ -3,6 +3,7 @@ using System;
 using System.Text.RegularExpressions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using FluentAssertions;
 
 namespace AgeVerification_and_AboutUs.WebPages 
 { 
@@ -59,44 +60,49 @@ namespace AgeVerification_and_AboutUs.WebPages
         public bool AlertVisible() =>
             WaitUntilVisible(ageGate_Alert);
 
+        public bool AgeWarningVisible() =>
+            WaitUntilVisible(ageGate_Warning);
+
         //Actions:
         /**
          * JS injection to manipulate drop-downs
          */
         public void SelectDate(Birthday combination, bool isMature) {
-
-            //TODO: generate random date
+            //generates random date
             int day = Xu.Next(1, 31), month = Xu.Next(1, 12), year = Xu.Next(1, 100);
 
-
-            //if no Day then Invalid overrides Immaturity so no need
-            if (combination.HasFlag(Birthday.Day))
-            {
-                if (combination.HasFlag(Birthday.Month))
-                {
+            //if day is NONE then the invalid-error will override the age-error:
+            if (combination.HasFlag(Birthday.Day)) {
+                //iff valid-month then day must be in domain of month: 
+                if (combination.HasFlag(Birthday.Month)) {
+                    
                     day = day % DAYS_OF_MONTH[month - 1];
 
-                    if (!WaitUntilVisible(ageGate_Day))
-                        throw (new ElementNotVisibleException("ageGate_Day"));
+                    WaitUntilVisible(ageGate_Day).Should().BeTrue();
+
                     ((IJavaScriptExecutor)_driver).ExecuteScript(
                         "arguments[0][arguments[1]].selected = true;",
                     ageGate_Day, day);
 
-                    if (!WaitUntilVisible(ageGate_Month))
-                        throw (new ElementNotVisibleException("ageGate_Month"));
+                    WaitUntilVisible(ageGate_Month).Should().BeTrue();
+
                     ((IJavaScriptExecutor)_driver).ExecuteScript(
                         "arguments[0][arguments[1]].selected = true;",
                     ageGate_Month, month);
                 }
-                else if (combination.HasFlag(Birthday.InvalidMonth)) { }
-                if (combination.HasFlag(Birthday.Year))
-                {
-                    if (!WaitUntilVisible(ageGate_Year))
-                        throw (new ElementNotVisibleException("ageGate_Year"));
+                else if (combination.HasFlag(Birthday.InvalidMonth)) {
+                    ;
+                }
+                if (combination.HasFlag(Birthday.Year)) {
+                    WaitUntilVisible(ageGate_Year).Should().BeTrue();
+
                     ((IJavaScriptExecutor)_driver).ExecuteScript(
                         "arguments[0][arguments[1]].selected = true;",
                     ageGate_Year, year);
                 }
+            }
+            else {
+                //what happens if day is NONE??
             }
         }
 

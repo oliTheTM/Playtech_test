@@ -1,16 +1,20 @@
 ﻿using System;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using FluentAssertions;
 
 namespace AgeVerification_and_AboutUs.WebPages
 {
     public sealed class PlayTech_AboutUs : WebPage 
     {
-        //WebElem's
+        //WebElem's:
 
+
+        /**
+         * Asserts that user navigation is correct.
+         */
         public PlayTech_AboutUs(IWebDriver driver) : base(driver) {
-            if (!_driver.Url.Contains("https://www.playtech.com/about-us"))
-                throw new WebDriverException("The current URL is not expected: "+_driver.Url);
+            _driver.Url.Should().Be("https://www.playtech.com/about-us");
         }
     }
 }

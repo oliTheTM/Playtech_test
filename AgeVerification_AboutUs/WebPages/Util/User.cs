@@ -44,7 +44,6 @@ namespace AgeVerification_and_AboutUs.WebPages.Util {
             }
             WebBrowser.Manage().Cookies.DeleteAllCookies();
             WebBrowser.Manage().Window.FullScreen();
-            WebBrowser.Url = string.Empty;
         }
     
         public static void TearDown(){
