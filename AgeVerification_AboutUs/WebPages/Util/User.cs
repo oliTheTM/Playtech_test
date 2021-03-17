@@ -29,9 +29,6 @@ namespace AgeVerification_and_AboutUs.WebPages.Util {
                     case Browser.Chrome:
                         WebBrowser = new ChromeDriver();
                         break;
-                    case Browser.IE:
-                        WebBrowser = new InternetExplorerDriver();
-                        break;
                     case Browser.Edge:
                         WebBrowser = new EdgeDriver();
                         break;

@@ -1,6 +1,5 @@
 ﻿using AgeVerification_and_AboutUs.WebPages.Util;
 using System;
-using System.Text.RegularExpressions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using FluentAssertions;
