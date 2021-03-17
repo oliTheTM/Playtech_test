@@ -66,8 +66,14 @@ namespace AgeVerification_AboutUs.Steps
                 throw (new SpecFlowException("Scenario Context missing: home-page"));
         }
 
-        [When(@"the User enters their birth date as (NONE|DATE), (NONE|MONTH) and (NONE|YEAR)")]
-        public void WhenTheUserEntersTheirBirthDateAsDMY(string day, string month, string year) {
+        [When(
+            @"the '(mature|immature)' User enters their birth date as (NONE|DATE), (NONE|MONTH) and (NONE|YEAR)"
+        )]
+        public void WhenTheUserEntersTheirBirthDateAsDMY(
+            string maturity, string day,
+            string month, string year
+        ) {
+            bool isMature = !maturity.Contains("im");
             Birthday entry = 0;
             //0 means none selected
             entry = (Birthday)(
@@ -76,7 +82,7 @@ namespace AgeVerification_AboutUs.Steps
                 ((year.Equals("YEAR"))? (int)Birthday.Year : 0)
             );
             if (_scenarioContext.TryGetValue("home-page", out PlayTech_Home home)) {
-                home.SelectDate(entry);
+                home.SelectDate(entry, isMature);
                 home.ClickAgeGateSubmit();
             } else 
                 throw (new SpecFlowException("Scenario context mssing: home-page"));

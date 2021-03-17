@@ -59,31 +59,50 @@ namespace AgeVerification_and_AboutUs.WebPages
         /**
          * JS injection to manipulate drop-downs
          */
-        public void SelectDate(Birthday combination)
-        {
-            if (combination == Birthday.Date) {
+        public void SelectDate(Birthday combination, bool isMature) {
+
+            int d = Xu.Next(1, 31), m = Xu.Next(1, 12), yr = Xu.Next(1, 100);
+            //you are immature if you are younger than 18years:
+            if (isMature) {
+                if (yr < 17)
+                    yr = 17 + Xu.Next(0, 82);
+                if (yr == 17) {
+                    d = (d < DateTime.Now.Day)? (DateTime.Now.Day - d) : d;
+                    m = (m < DateTime.Now.Month) ? (DateTime.Now.Month - m) : m;
+                }
+            } 
+            else {
+                if (yr > 17)
+                    yr = yr % 17;
+                yr = (yr == 0)? 17 : yr;
+                d = d % DateTime.Now.Day;
+                d = (d == 0)? DateTime.Now.Day : d;
+                m = m % DateTime.Now.Month;
+                m = (m == 0)? DateTime.Now.Month : m;
+            }
+
+            if (combination.HasFlag(Birthday.Date)) {
                 if (!WaitUntilVisible(ageGate_Day))
                     throw (new ElementNotVisibleException("ageGate_Day"));
                 //pick a random day:
                 ((IJavaScriptExecutor)_driver).ExecuteScript(
                     "arguments[0][arguments[1]].selected = true;",
-                ageGate_Day, Xu.Next(1, 31));
+                ageGate_Day, d);
             }
-            if (combination == Birthday.Month) {
+            if (combination.HasFlag(Birthday.Month)) {
                 if (!WaitUntilVisible(ageGate_Month))
                     throw (new ElementNotVisibleException("ageGate_Month"));
                 //pick a random month:
                 ((IJavaScriptExecutor)_driver).ExecuteScript(
                     "arguments[0][arguments[1]].selected = true;",
-                ageGate_Month, Xu.Next(1, 12));
+                ageGate_Month, m);
             }
-            if (combination == Birthday.Year) {
+            if (combination.HasFlag(Birthday.Year)) {
                 if (!WaitUntilVisible(ageGate_Year))
-                    throw (new ElementNotVisibleException("ageGate_Year"));
-                //pick a random year:
+                    throw (new ElementNotVisibleException("ageGate_Year"));        
                 ((IJavaScriptExecutor)_driver).ExecuteScript(
                     "arguments[0][arguments[1]].selected = true;",
-                ageGate_Year, Xu.Next(1921, 2021));
+                ageGate_Year, yr);
             }
         }
 
