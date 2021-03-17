@@ -10,17 +10,31 @@ namespace AgeVerification_and_AboutUs.WebPages {
         //To pick random dates
         private Random Xu;
 
-        //Objects:
-        [FindsBy(How = How.XPath, Using = "")]
+        /**
+         * Remark, that the risk of a truncated Xpath being a non-unique address exponentially decreases w/r it's length.
+         * This is because the expected No. elements of a given context compounds at each level by the Law of Product.
+         */
+        [FindsBy(How =How.XPath, Using = "//section[1]/div[1]/div[1]/div[1]/div[1]/img[1]")]
+        private IWebElement ageGate;
+
+        [FindsBy(How = How.XPath, Using = "//div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/select[1]")]
         private IWebElement ageGate_Day;
-        [FindsBy(How = How.XPath, Using = "")]
+        [FindsBy(How = How.XPath, Using = "//div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/select[1]")]
         private IWebElement ageGate_Month;
-        [FindsBy(How = How.XPath, Using = "")]
+        [FindsBy(How = How.XPath, Using = "//div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[3]/select[1]")]
         private IWebElement ageGate_Year;
-        [FindsBy(How = How.XPath, Using = "")]
+        
+        [FindsBy(How = How.XPath, Using = "//div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[2]/div[1]")]
         private IWebElement ageGate_Alert;
-        [FindsBy(How = How.XPath, Using = "")]
+        
+        [FindsBy(How = How.XPath, Using = "//div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[2]/div[4]/button[1]")]
         private IWebElement ageGate_submit;
+
+        [FindsBy(How = How.Id, Using = "hamburger")]
+        private IWebElement home_menuOpen;
+
+        [FindsBy(How = How.XPath, Using = "//div[1]/main[1]/div[1]/nav[1]/div[1]/ul[1]/li[1]/a[1]")]
+        private IWebElement aboutUs_link;
 
 
         public PlayTech_Home() : base("http://www.playtech.com/") {
@@ -30,7 +44,7 @@ namespace AgeVerification_and_AboutUs.WebPages {
         
         //Assertions:
         public bool AgeGateVisible() =>
-            WaitUntilVisible(ageGate_submit);
+            WaitUntilVisible(ageGate);
 
         public bool AlertVisible() =>
             WaitUntilVisible(ageGate_Alert);
@@ -74,5 +88,11 @@ namespace AgeVerification_and_AboutUs.WebPages {
 
         public void ClickAgeGateSubmit() =>
             Click(ageGate_submit, "ageGate_submit");
+    
+        public void OpenMenu() =>
+            Click(home_menuOpen, "home_menuOpen");
+
+        public void ClickAboutUsLink() =>
+            Click(aboutUs_link, "aboutUs_link");
     }
 }
