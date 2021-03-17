@@ -69,7 +69,7 @@ namespace AgeVerification_AboutUs.Steps
             Birthday entry = 0;
             //0 means none selected
             entry = (Birthday)(
-                ((day.Equals("DATE"))? (int)Birthday.Day : 0) +
+                ((day.Equals("DAY"))? (int)Birthday.Day : 0) +
                 ((month.Equals("MONTH"))? (int)Birthday.Month : 
                     ((month.Equals("INVALID_MONTH")) ? (int)Birthday.InvalidMonth : 0)
                 ) +

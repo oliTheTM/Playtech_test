@@ -2,63 +2,48 @@
 Verify that the functionality of said Features are correct.
 
 
-# DATE, MONTH and YEAR are randomly generated.
+# DATE, MONTH and YEAR are randomly generated indexes.
 Scenario Outline: 1 Verify Age-Gate
 	Given the User is on <Browser>
 	When the User navigates to 'playtech home'
 	Then the User observes the 'Age-Gate Modal'
-	When the <Maturity> User enters their birth date as <Date>, <Month> and <Year>
+	When the <Maturity> User enters their birth date as <Day>, <Month> and <Year>
 	And the User clicks 'Enter Site'
 	Then the User observes the <Effect>
-#Factorial-Design (40 = 2^3 + 2^5). Where there are 3 Fields that may be left Empty
-#and there are 2 states for Validity of Month chosen or 2 states for Maturity; for
-#each Browser.
+#constrained Factorial-Design(30 = 3(1-(1/4)-(1/8))(2(2^3)):
 Examples:
-	|  Maturity  |  Browser  | Date |     Month     | Year |     Effect      |
-	|  'mature'  | 'Firefox' | NONE |   MONTH       | YEAR | 'Alert Message' |
-	|  'mature'  | 'Firefox' | DATE |   NONE        | YEAR | 'Alert Message' |
-	|  'mature'  | 'Firefox' | DATE |   MONTH       | NONE | 'Alert Message' |
-	|  'mature'  | 'Firefox' | NONE |   NONE        | NONE | 'Alert Message' |
-	|  'mature'  | 'Firefox' | DATE |   NONE        | NONE | 'Alert Message' |
-	|  'mature'  | 'Firefox' | NONE |   NONE        | YEAR | 'Alert Message' |
-	|  'mature'  | 'Firefox' | NONE |   MONTH       | NONE | 'Alert Message' |
-	|  'mature'  | 'Firefox' | DATE |   MONTH       | YEAR | 'Modal is gone' |
-	|  'mature'  | 'Firefox' | DATE | INVALID_MONTH | YEAR | 'Alert Message' |
-	| 'immature' | 'Firefox' | DATE |   MONTH       | YEAR |  'Age Warning'  |
-	| 'immature' | 'Firefox' | DATE | INVALID_MONTH | YEAR | 'Alert Message' |
-	|  'mature'  | 'IE'      | NONE |   MONTH       | YEAR | 'Alert Message' |
-	|  'mature'  | 'IE'      | DATE |   NONE        | YEAR | 'Alert Message' |
-	|  'mature'  | 'IE'      | DATE |   MONTH       | NONE | 'Alert Message' |
-	|  'mature'  | 'IE'      | NONE |   NONE        | NONE | 'Alert Message' |
-	|  'mature'  | 'IE'      | DATE |   NONE        | NONE | 'Alert Message' |
-	|  'mature'  | 'IE'      | NONE |   NONE        | YEAR | 'Alert Message' |
-	|  'mature'  | 'IE'      | NONE |   MONTH       | NONE | 'Alert Message' |
-	|  'mature'  | 'IE'      | DATE |   MONTH       | YEAR | 'Modal is gone' |
-	| 'immature' | 'IE'      | DATE |   MONTH       | YEAR |  'Age Warning'  |
-	| 'immature' | 'IE'      | DATE | INVALID_MONTH | YEAR | 'Alert Message' |
-	|  'mature'  | 'IE'      | DATE | INVALID_MONTH | YEAR | 'Alert Message' |
-	|  'mature'  | 'Edge'    | NONE |   MONTH       | YEAR | 'Alert Message' |
-	|  'mature'  | 'Edge'    | DATE |   NONE        | YEAR | 'Alert Message' |
-	|  'mature'  | 'Edge'    | DATE |   MONTH       | NONE | 'Alert Message' |
-	|  'mature'  | 'Edge'    | NONE |   NONE        | NONE | 'Alert Message' |
-	|  'mature'  | 'Edge'    | DATE |   NONE        | NONE | 'Alert Message' |
-	|  'mature'  | 'Edge'    | NONE |   NONE        | YEAR | 'Alert Message' |
-	|  'mature'  | 'Edge'    | NONE |   MONTH       | NONE | 'Alert Message' |
-	|  'mature'  | 'Edge'    | DATE |   MONTH       | YEAR | 'Modal is gone' |
-	| 'immature' | 'Edge'    | DATE |   MONTH       | YEAR |  'Age Warning'  |
-	|  'mature'  | 'Edge'    | DATE | INVALID_MONTH | YEAR | 'Alert Message' |
-	| 'immature' | 'Edge'    | DATE | INVALID_MONTH | YEAR | 'Alert Message' |
-	|  'mature'  | 'Chrome'  | NONE |   MONTH       | YEAR | 'Alert Message' |
-	|  'mature'  | 'Chrome'  | DATE |   NONE        | YEAR | 'Alert Message' |
-	|  'mature'  | 'Chrome'  | DATE |   MONTH       | NONE | 'Alert Message' |
-	|  'mature'  | 'Chrome'  | NONE |   NONE        | NONE | 'Alert Message' |
-	|  'mature'  | 'Chrome'  | DATE |   NONE        | NONE | 'Alert Message' |
-	|  'mature'  | 'Chrome'  | NONE |   NONE        | YEAR | 'Alert Message' |
-	|  'mature'  | 'Chrome'  | NONE |   MONTH       | NONE | 'Alert Message' |
-	|  'mature'  | 'Chrome'  | DATE |   MONTH       | YEAR | 'Modal is gone' |
-	| 'immature' | 'Chrome'  | DATE |   MONTH       | YEAR |  'Age Warning'  |
-	|  'mature'  | 'Chrome'  | DATE | INVALID_MONTH | YEAR | 'Alert Message' |
-	| 'immature' | 'Chrome'  | DATE | INVALID_MONTH | YEAR | 'Alert Message' |
+	|  Browser  | Day  |     Month     | Year |  Maturity  |     Effect      |
+	| 'Firefox' | NONE | MONTH         | YEAR | 'immature' | 'Alert Message' |
+	| 'Firefox' | DAY  | NONE          | YEAR | 'immature' | 'Alert Message' |
+	| 'Firefox' | NONE | NONE          | YEAR | 'mature'   | 'Alert Message' |
+	| 'Firefox' | NONE | NONE          | YEAR | 'immature' | 'Alert Message' |
+	| 'Firefox' | NONE | MONTH         | NONE | 'mature'   | 'Alert Message' |
+	| 'Firefox' | DAY  | NONE          | NONE | 'mature'   | 'Alert Message' |
+	| 'Firefox' | DAY  | MONTH         | YEAR | 'mature'   | 'Modal is gone' |
+	| 'Firefox' | DAY  | MONTH         | YEAR | 'immature' | 'Age Warning'   |
+	| 'Firefox' | DAY  | INVALID_MONTH | YEAR | 'immature' | 'Alert Message' |	
+	| 'Firefox' | NONE | INVALID_MONTH | YEAR | 'mature'   | 'Alert Message' |
+	|  'Edge'   | NONE | NONE          | YEAR | 'immature' | 'Alert Message' |
+	|  'Edge'   | DAY  | MONTH         | YEAR | 'immature' | 'Age Warning'   |
+	|  'Edge'   | NONE | NONE          | YEAR | 'mature'   | 'Alert Message' |
+	|  'Edge'   | DAY  | NONE          | YEAR | 'immature' | 'Alert Message' |
+	|  'Edge'   | NONE | INVALID_MONTH | YEAR | 'mature'   | 'Alert Message' |
+	|  'Edge'   | NONE | MONTH         | YEAR | 'immature' | 'Alert Message' |
+	|  'Edge'   | DAY  | NONE          | NONE | 'mature'   | 'Alert Message' |
+	|  'Edge'   | DAY  | MONTH         | YEAR | 'mature'   | 'Modal is gone' |
+	|  'Edge'   | NONE | MONTH         | NONE | 'mature'   | 'Alert Message' |
+	|  'Edge'   | DAY  | INVALID_MONTH | YEAR | 'immature' | 'Alert Message' |
+	|  'Chrome' | NONE | NONE          | YEAR | 'immature' | 'Alert Message' |
+	|  'Chrome' | NONE | MONTH         | YEAR | 'immature' | 'Alert Message' |
+	|  'Chrome' | DAY  | NONE          | YEAR | 'immature' | 'Alert Message' |
+	|  'Chrome' | DAY  | MONTH         | YEAR | 'immature' | 'Age Warning'   |
+	|  'Chrome' | DAY  | INVALID_MONTH | YEAR | 'immature' | 'Alert Message' |
+	|  'Chrome' | NONE | NONE          | YEAR | 'mature'   | 'Alert Message' |
+	|  'Chrome' | NONE | MONTH         | NONE | 'mature'   | 'Alert Message' |
+	|  'Chrome' | DAY  | NONE          | NONE | 'mature'   | 'Alert Message' |
+	|  'Chrome' | DAY  | MONTH         | YEAR | 'mature'   | 'Modal is gone' |
+	|  'Chrome' | NONE | INVALID_MONTH | YEAR | 'mature'   | 'Alert Message' |
+	
 
 
 	
