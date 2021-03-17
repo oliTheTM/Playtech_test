@@ -23,8 +23,8 @@ namespace AgeVerification_and_AboutUs.WebPages.Util {
             WebBrowser = null;
         }
 
-        public static void ChangeBrowser(Browser browser){
-            if (browser != _currentBrowser) { 
+        public static void ChangeRefreshBrowser(Browser browser){
+            if ((browser > 0)&&(browser != _currentBrowser)) { 
                 switch (browser) {
                     case Browser.Chrome:
                         WebBrowser = new ChromeDriver();
@@ -41,9 +41,10 @@ namespace AgeVerification_and_AboutUs.WebPages.Util {
                     default:
                         throw (new WebDriverException("Unrecognized browser: " + browser.ToString()));
                 }
-                WebBrowser.Manage().Cookies.DeleteAllCookies();
-                WebBrowser.Manage().Window.FullScreen();
             }
+            WebBrowser.Manage().Cookies.DeleteAllCookies();
+            WebBrowser.Manage().Window.FullScreen();
+            WebBrowser.Url = string.Empty;
         }
     
         public static void TearDown(){

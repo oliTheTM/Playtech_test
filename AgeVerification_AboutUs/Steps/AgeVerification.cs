@@ -6,9 +6,9 @@ using FluentAssertions;
 namespace AgeVerification_AboutUs.Steps
 {
     /**
-    * ScenarioContext:
+    **ScenarioContext**
     * 
-    *     home-page
+    *     home-page : PlayTech_Home
     *        
     */
     [Binding]
@@ -22,30 +22,22 @@ namespace AgeVerification_AboutUs.Steps
         }
 
 
-        [BeforeScenario()]
-        public void BeforeAVScenario() {
-            //only for the age-gate UC scenario
-            if (_scenarioContext.ScenarioInfo.Title.Equals("1 Verify Age-Gate")) {
-                //Refresh for next test-case:
-                if (User.WebBrowser != null) {
-                    User.WebBrowser.Manage().Cookies.DeleteAllCookies();
-                    User.WebBrowser.Navigate();
-                }
-            }
-        }
-
-
         [Given("the User is on '(.*)'")]
         public void GivenUserUsing(string browser) =>
-            User.ChangeBrowser(browser.ToBrowser());
+            User.ChangeRefreshBrowser(browser.ToBrowser());
 
         [When(@"the User navigates to '(.*)'")]
         public void WhenTheUserNavigatesTo(string webPage) {
-            if (webPage.Equals("playtech home"))
-                //PlayTech_Home() transitively navigates to home-page
-                _scenarioContext.Add("home-page", (new PlayTech_Home(User.WebBrowser)));
+            if (webPage.Equals("playtech home")) {
+                //PlayTech_Home() transitively navigates to home-page:
+                if (_scenarioContext.ContainsKey("home-page")) {
+                    _scenarioContext["home-page"] = new PlayTech_Home(User.WebBrowser);
+                }
+                else
+                    _scenarioContext.Add("home-page", (new PlayTech_Home(User.WebBrowser)));
+            }
             else
-                throw (new SpecFlowException("Unknown web-page: "+webPage));
+                throw (new SpecFlowException("Unknown web-page: " + webPage));
         }
 
         [Then(@"the User observes the '(.*)'")]
