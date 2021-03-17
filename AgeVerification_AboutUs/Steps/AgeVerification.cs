@@ -31,7 +31,7 @@ namespace AgeVerification_AboutUs.Steps
         [When(@"the User navigates to '(.*)'")]
         public void WhenTheUserNavigatesTo(string webPage) {
             if (webPage.Equals("playtech home"))
-                //navigation happens here:
+                //PlayTech_Home() transitively navigates to home-page
                 _scenarioContext.Add("home-page", new PlayTech_Home());
             else
                 throw (new SpecFlowException("Unknown web-page: "+webPage));

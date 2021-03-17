@@ -10,11 +10,16 @@ namespace AgeVerification_and_AboutUs.WebPages {
             User.WebBrowser.Url = url;
             User.WebBrowser.Navigate();
         }
+        
+        /**
+         * This constructor asserts that the User is traversing the web-site correctly
+         * from a Root web-page
+         */
         public WebPage() {
-            if (!string.IsNullOrEmpty(User.WebBrowser.Url))
+            if (User.WebBrowser.Url.Equals("https://www.playtech.com/about-us"))
                 User.WebBrowser.Navigate();
             else
-                throw (new WebDriverException("URL not set when instantiating a WebPage"));
+                throw (new WebDriverException("URL not set to expected value of: https://www.playtech.com/about-us"));
         }
 
         /**
