@@ -37,18 +37,20 @@ namespace AgeVerification_and_AboutUs.WebPages {
         private IWebElement aboutUs_link;
 
 
-        public PlayTech_Home() : base("http://www.playtech.com/") {
+        public PlayTech_Home(IWebDriver driver) : base(driver, "http://www.playtech.com/") {
             Xu = new Random(DateTime.Now.Millisecond);
         }
 
-        
+
         //Assertions:
+        /**
+         * Assumption: a web-page is loaded given that the test-object is visible.
+         */
         public bool AgeGateVisible() =>
             WaitUntilVisible(ageGate);
 
         public bool AlertVisible() =>
             WaitUntilVisible(ageGate_Alert);
-
 
         //Actions:
         /**
@@ -62,7 +64,7 @@ namespace AgeVerification_and_AboutUs.WebPages {
                 if (!WaitUntilVisible(ageGate_Day))
                     throw (new ElementNotVisibleException("ageGate_Day"));
                 //pick a random day:
-                ((IJavaScriptExecutor)User.WebBrowser).ExecuteScript(
+                ((IJavaScriptExecutor)_driver).ExecuteScript(
                     "args[0][args[1]].selected = true;",
                 ageGate_Day, Xu.Next(1, 31));
             }
@@ -71,7 +73,7 @@ namespace AgeVerification_and_AboutUs.WebPages {
                 if (!WaitUntilVisible(ageGate_Month))
                     throw (new ElementNotVisibleException("ageGate_Month"));
                 //pick a random month:
-                ((IJavaScriptExecutor)User.WebBrowser).ExecuteScript(
+                ((IJavaScriptExecutor)_driver).ExecuteScript(
                     "args[0][args[1]].selected = true;",
                 ageGate_Month, Xu.Next(1, 12));
             }
@@ -80,7 +82,7 @@ namespace AgeVerification_and_AboutUs.WebPages {
                 if (!WaitUntilVisible(ageGate_Year))
                     throw (new ElementNotVisibleException("ageGate_Year"));
                 //pick a random year:
-                ((IJavaScriptExecutor)User.WebBrowser).ExecuteScript(
+                ((IJavaScriptExecutor)_driver).ExecuteScript(
                     "args[0][args[1]].selected = true;",
                 ageGate_Year, Xu.Next(1921, 2021));
             }

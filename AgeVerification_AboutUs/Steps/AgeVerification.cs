@@ -27,10 +27,12 @@ namespace AgeVerification_AboutUs.Steps
         [BeforeScenario()]
         public void BeforeAVScenario() {
             //only for the age-gate UC scenario
-            if (_scenarioContext.ScenarioInfo.Title.Equals("Verify Age-Gate")) {
+            if (_scenarioContext.ScenarioInfo.Title.Equals("1 Verify Age-Gate")) {
                 //Refresh for next test-case:
-                User.WebBrowser.Manage().Cookies.DeleteAllCookies();
-                User.WebBrowser.Navigate();
+                if (User.WebBrowser != null) {
+                    User.WebBrowser.Manage().Cookies.DeleteAllCookies();
+                    User.WebBrowser.Navigate();
+                }
             }
         }
 
@@ -43,7 +45,7 @@ namespace AgeVerification_AboutUs.Steps
         public void WhenTheUserNavigatesTo(string webPage) {
             if (webPage.Equals("playtech home"))
                 //PlayTech_Home() transitively navigates to home-page
-                _scenarioContext.Add("home-page", new PlayTech_Home());
+                _scenarioContext.Add("home-page", (new PlayTech_Home(User.WebBrowser)));
             else
                 throw (new SpecFlowException("Unknown web-page: "+webPage));
         }
@@ -64,7 +66,7 @@ namespace AgeVerification_AboutUs.Steps
                 throw (new SpecFlowException("Scenario Context missing: home-page"));
         }
 
-        [When(@"the User enters their birth date as a (NONE|DATE), (NONE|MONTH) and (NONE|YEAR)")]
+        [When(@"the User enters their birth date as (NONE|DATE), (NONE|MONTH) and (NONE|YEAR)")]
         public void WhenTheUserEntersTheirBirthDateAsDMY(string day, string month, string year) {
             Birthday entry = 0;
             entry = (Birthday)(

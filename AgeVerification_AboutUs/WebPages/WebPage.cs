@@ -1,26 +1,31 @@
 ﻿using System;
-using AgeVerification_and_AboutUs.WebPages.Util;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
 namespace AgeVerification_and_AboutUs.WebPages {
     public abstract class WebPage 
     {
-        public WebPage(string url) {
-            User.WebBrowser.Url = url;
-            User.WebBrowser.Navigate();
+        protected IWebDriver _driver;
+
+
+        public WebPage(IWebDriver driver, string url) {
+            _driver = driver;
+            _driver.Url = url;
+            _driver.Navigate();
         }
         
         /**
-         * This constructor asserts that the User is traversing the web-site correctly
-         * from a Root web-page
+         * This constructor asserts that the User is traversing web-pages
+         * at the time of instantiation
          */
-        public WebPage() {
-            if (User.WebBrowser.Url.Equals("https://www.playtech.com/about-us"))
-                User.WebBrowser.Navigate();
+        public WebPage(IWebDriver driver) {
+            _driver = driver;
+            if (Uri.TryCreate(_driver.Url, UriKind.Absolute, out Uri uri))
+                _driver.Navigate();
             else
-                throw (new WebDriverException("URL not set to expected value of: https://www.playtech.com/about-us"));
+                throw (new WebDriverException("Webdriver set to invalid URL: "+ _driver.Url));
         }
+
 
         /**
          * This method waits until a select web-element appears
@@ -30,8 +35,8 @@ namespace AgeVerification_and_AboutUs.WebPages {
         public bool WaitUntilVisible(IWebElement elem) {
             try { 
                 WebDriverWait wait = (new WebDriverWait(
-                    User.WebBrowser,
-                    User.WebBrowser.Manage().Timeouts().PageLoad
+                    _driver,
+                    _driver.Manage().Timeouts().PageLoad
                 ));
                 wait.Until<bool>((w)=>{try{
                     return elem.Displayed; 

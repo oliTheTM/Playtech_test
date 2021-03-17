@@ -4,16 +4,19 @@ using TechTalk.SpecFlow;
 namespace AgeVerification_and_AboutUs.GlobalHooks
 { 
 	[Binding]
-	public sealed class Global 
+	public static class Global 
 	{
-		private ITestRunner _testRunner;
+		private static ITestRunner _testRunner;
 
-		public Global() {
+		static Global() {
 			_testRunner = TestRunnerManager.GetTestRunner();
 		}
 
+		/**
+		 * Tear-Down procedure
+		 */
 		[AfterTestRun]
-		public void AfterTestRun() {	
+		public static void AfterTestRun() {	
 			_testRunner.CollectScenarioErrors();
 			User.TearDown();
 		}
