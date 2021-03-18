@@ -65,7 +65,7 @@ namespace AgeVerification_and_AboutUs.WebPages
             //missing fields will mean it is undecidable. To solve this - we reduce/raise
             //the year depending on which eqv.class.
             if (
-                (generatedDate[2] == 17) &&
+                (generatedDate[2] == 18) &&
                 (combination.HasFlag(Birthday.Day) || combination.HasFlag(Birthday.Month))
             ) {
                 if (isMature)

@@ -26,10 +26,9 @@ namespace AgeVerification_and_AboutUs.WebPages.Util
         public static int[] MakeMature(bool isMature)
         {
             int[] date = new int[3];
-            if (isMature)
-            {
-                date[2] = Xu.Next(17, 100);
-                if (date[2] == 17)
+            if (isMature) {
+                date[2] = Xu.Next(18, 100);
+                if (date[2] == 18)
                 {
                     date[1] = Xu.Next(1, DateTime.Now.Month);
                     if (date[1] == DateTime.Now.Month)
@@ -43,10 +42,9 @@ namespace AgeVerification_and_AboutUs.WebPages.Util
                 ));
                 return date;
             }
-            else
-            {//83 = 100 -(18 - 1)
-                date[2] = Xu.Next(1, 83);
-                if (date[2] == 83)
+            else {
+                date[2] = Xu.Next(1, 18);
+                if (date[2] == 18)
                 {
                     date[1] = Xu.Next(DateTime.Now.Month, 12);
                     if (date[1] == DateTime.Now.Month)
@@ -72,7 +70,7 @@ namespace AgeVerification_and_AboutUs.WebPages.Util
                     return date;
                 }
                 date[1] = Xu.Next(1, 12);
-                date[2] = Xu.Next(1, DateTime.DaysInMonth((DateTime.Now.Year - date[2]), date[1]));
+                date[0] = Xu.Next(1, DateTime.DaysInMonth((DateTime.Now.Year - date[2]), date[1]));
                 return date;
             }
         }

@@ -24,7 +24,8 @@ namespace AgeVerification_and_AboutUs.WebPages.Util {
         }
 
         public static void ChangeRefreshBrowser(Browser browser){
-            if ((browser > 0)&&(browser != _currentBrowser)) { 
+            if ((browser > 0)&&(browser != _currentBrowser)) {
+                _currentBrowser = browser;
                 switch (browser) {
                     case Browser.Chrome:
                         WebBrowser = new ChromeDriver();

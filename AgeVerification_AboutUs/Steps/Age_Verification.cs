@@ -37,10 +37,12 @@ namespace AgeVerification_AboutUs.Steps
                 else
                     _scenarioContext.Add("home-page", (new PlayTech_Home(User.WebBrowser)));
             }
+            else
+                _scenarioContext.Pending();
         }
 
         [When(
-            @"the '(mature|immature)' User enters their birth date as (NONE|DATE), (NONE|MONTH) and (NONE|YEAR)"
+            @"the '(mature|immature)' User enters their birth date as (NONE|DAY), (NONE|MONTH) and (NONE|YEAR)"
         )]
         public void WhenTheUserEntersTheirBirthDateAsDMY(
             string maturity, string day,
@@ -56,10 +58,9 @@ namespace AgeVerification_AboutUs.Steps
                 ) +
                 ((year.Equals("YEAR"))? (int)Birthday.Year : 0)
             );
-            if (_scenarioContext.TryGetValue("home-page", out PlayTech_Home home)) {
+            if (_scenarioContext.TryGetValue("home-page", out PlayTech_Home home)) 
                 home.SelectDate(entry, isMature);
-                home.ClickAgeGateSubmit();
-            } else 
+            else 
                 throw (new SpecFlowException("Scenario context mssing: home-page"));
         }
 
@@ -69,10 +70,12 @@ namespace AgeVerification_AboutUs.Steps
             if (_scenarioContext.TryGetValue("home-page", out PlayTech_Home home)) {
                 if (button.Equals("Enter Site"))
                     home.ClickAgeGateSubmit();
-                if (button.Equals("menu open"))
+                else if (button.Equals("menu open"))
                     home.OpenMenu();        
-                if (button.Equals("About Us"))
+                else if (button.Equals("About Us"))
                     home.ClickAboutUsLink();
+                else
+                    _scenarioContext.Pending();
             } else
                 throw (new SpecFlowException("Scenario Context missing: home-page"));
         }
@@ -83,16 +86,18 @@ namespace AgeVerification_AboutUs.Steps
             if (_scenarioContext.TryGetValue("home-page", out PlayTech_Home home)) {
                 if (webElement.Equals("Age-Gate Modal"))
                     home.AgeGateVisible().Should().BeTrue();
-                if (webElement.Equals("Alert Message"))
+                else if (webElement.Equals("Alert Message"))
                     home.AlertVisible().Should().BeTrue();
-                if (webElement.Equals("Modal is gone"))
+                else if (webElement.Equals("Modal is gone"))
                     home.AgeGateVisible().Should().BeFalse();
-                if (webElement.Equals("Age Warning"))
+                else if (webElement.Equals("Age Warning"))
                     home.AgeWarningVisible().Should().BeTrue();
-                if (webElement.Equals("4 KIs")) {
+                else if (webElement.Equals("4 KIs")) {
                     _scenarioContext.Add("about-us", (new PlayTech_AboutUs(User.WebBrowser)));
                     ((PlayTech_AboutUs)_scenarioContext["about-us"]).TitleVisible().Should().BeTrue();
                 }
+                else
+                    _scenarioContext.Pending();
             }
             else
                 throw (new SpecFlowException("Scenario Context missing: home-page"));
