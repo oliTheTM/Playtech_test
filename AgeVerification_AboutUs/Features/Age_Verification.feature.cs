@@ -102,7 +102,7 @@ namespace AgeVerification_and_AboutUs.Features
             argumentsOfScenario.Add("Maturity", maturity);
             argumentsOfScenario.Add("Effect", effect);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1 Verify Age-Gate", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 6
+#line 5
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -122,22 +122,22 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 7
+#line 6
  testRunner.Given(string.Format("the User is on {0}", browser), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 8
+#line 7
  testRunner.When("the User navigates to \'playtech home\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 9
+#line 8
  testRunner.Then("the User observes the \'Age-Gate Modal\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 10
+#line 9
  testRunner.When(string.Format("the {0} User enters their birth date as {1}, {2} and {3}", maturity, day, month, year), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 11
+#line 10
  testRunner.And("the User clicks \'Enter Site\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 12
+#line 11
  testRunner.Then(string.Format("the User observes the {0}", effect), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -156,7 +156,7 @@ this.ScenarioInitialize(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Alert Message\'")]
         public virtual void _1VerifyAge_Gate_Variant0()
         {
-#line 6
+#line 5
 this._1VerifyAge_Gate("\'Firefox\'", "NONE", "MONTH", "YEAR", "\'immature\'", "\'Alert Message\'", ((string[])(null)));
 #line hidden
         }
@@ -173,7 +173,7 @@ this._1VerifyAge_Gate("\'Firefox\'", "NONE", "MONTH", "YEAR", "\'immature\'", "\
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Alert Message\'")]
         public virtual void _1VerifyAge_Gate_Variant1()
         {
-#line 6
+#line 5
 this._1VerifyAge_Gate("\'Firefox\'", "DAY", "NONE", "YEAR", "\'immature\'", "\'Alert Message\'", ((string[])(null)));
 #line hidden
         }
@@ -190,7 +190,7 @@ this._1VerifyAge_Gate("\'Firefox\'", "DAY", "NONE", "YEAR", "\'immature\'", "\'A
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Alert Message\'")]
         public virtual void _1VerifyAge_Gate_Variant2()
         {
-#line 6
+#line 5
 this._1VerifyAge_Gate("\'Firefox\'", "NONE", "NONE", "YEAR", "\'mature\'", "\'Alert Message\'", ((string[])(null)));
 #line hidden
         }
@@ -207,7 +207,7 @@ this._1VerifyAge_Gate("\'Firefox\'", "NONE", "NONE", "YEAR", "\'mature\'", "\'Al
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Alert Message\'")]
         public virtual void _1VerifyAge_Gate_Variant3()
         {
-#line 6
+#line 5
 this._1VerifyAge_Gate("\'Firefox\'", "NONE", "NONE", "YEAR", "\'immature\'", "\'Alert Message\'", ((string[])(null)));
 #line hidden
         }
@@ -224,7 +224,7 @@ this._1VerifyAge_Gate("\'Firefox\'", "NONE", "NONE", "YEAR", "\'immature\'", "\'
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Alert Message\'")]
         public virtual void _1VerifyAge_Gate_Variant4()
         {
-#line 6
+#line 5
 this._1VerifyAge_Gate("\'Firefox\'", "NONE", "MONTH", "NONE", "\'mature\'", "\'Alert Message\'", ((string[])(null)));
 #line hidden
         }
@@ -241,7 +241,7 @@ this._1VerifyAge_Gate("\'Firefox\'", "NONE", "MONTH", "NONE", "\'mature\'", "\'A
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Alert Message\'")]
         public virtual void _1VerifyAge_Gate_Variant5()
         {
-#line 6
+#line 5
 this._1VerifyAge_Gate("\'Firefox\'", "DAY", "NONE", "NONE", "\'mature\'", "\'Alert Message\'", ((string[])(null)));
 #line hidden
         }
@@ -258,7 +258,7 @@ this._1VerifyAge_Gate("\'Firefox\'", "DAY", "NONE", "NONE", "\'mature\'", "\'Ale
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Modal is gone\'")]
         public virtual void _1VerifyAge_Gate_Variant6()
         {
-#line 6
+#line 5
 this._1VerifyAge_Gate("\'Firefox\'", "DAY", "MONTH", "YEAR", "\'mature\'", "\'Modal is gone\'", ((string[])(null)));
 #line hidden
         }
@@ -275,7 +275,7 @@ this._1VerifyAge_Gate("\'Firefox\'", "DAY", "MONTH", "YEAR", "\'mature\'", "\'Mo
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Age Warning\'")]
         public virtual void _1VerifyAge_Gate_Variant7()
         {
-#line 6
+#line 5
 this._1VerifyAge_Gate("\'Firefox\'", "DAY", "MONTH", "YEAR", "\'immature\'", "\'Age Warning\'", ((string[])(null)));
 #line hidden
         }
@@ -292,7 +292,7 @@ this._1VerifyAge_Gate("\'Firefox\'", "DAY", "MONTH", "YEAR", "\'immature\'", "\'
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Alert Message\'")]
         public virtual void _1VerifyAge_Gate_Variant8()
         {
-#line 6
+#line 5
 this._1VerifyAge_Gate("\'Firefox\'", "DAY", "INVALID_MONTH", "YEAR", "\'immature\'", "\'Alert Message\'", ((string[])(null)));
 #line hidden
         }
@@ -309,7 +309,7 @@ this._1VerifyAge_Gate("\'Firefox\'", "DAY", "INVALID_MONTH", "YEAR", "\'immature
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Alert Message\'")]
         public virtual void _1VerifyAge_Gate_Variant9()
         {
-#line 6
+#line 5
 this._1VerifyAge_Gate("\'Firefox\'", "NONE", "INVALID_MONTH", "YEAR", "\'mature\'", "\'Alert Message\'", ((string[])(null)));
 #line hidden
         }
@@ -326,7 +326,7 @@ this._1VerifyAge_Gate("\'Firefox\'", "NONE", "INVALID_MONTH", "YEAR", "\'mature\
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Alert Message\'")]
         public virtual void _1VerifyAge_Gate_Variant10()
         {
-#line 6
+#line 5
 this._1VerifyAge_Gate("\'Edge\'", "NONE", "NONE", "YEAR", "\'immature\'", "\'Alert Message\'", ((string[])(null)));
 #line hidden
         }
@@ -343,7 +343,7 @@ this._1VerifyAge_Gate("\'Edge\'", "NONE", "NONE", "YEAR", "\'immature\'", "\'Ale
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Age Warning\'")]
         public virtual void _1VerifyAge_Gate_Variant11()
         {
-#line 6
+#line 5
 this._1VerifyAge_Gate("\'Edge\'", "DAY", "MONTH", "YEAR", "\'immature\'", "\'Age Warning\'", ((string[])(null)));
 #line hidden
         }
@@ -360,7 +360,7 @@ this._1VerifyAge_Gate("\'Edge\'", "DAY", "MONTH", "YEAR", "\'immature\'", "\'Age
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Alert Message\'")]
         public virtual void _1VerifyAge_Gate_Variant12()
         {
-#line 6
+#line 5
 this._1VerifyAge_Gate("\'Edge\'", "NONE", "NONE", "YEAR", "\'mature\'", "\'Alert Message\'", ((string[])(null)));
 #line hidden
         }
@@ -377,7 +377,7 @@ this._1VerifyAge_Gate("\'Edge\'", "NONE", "NONE", "YEAR", "\'mature\'", "\'Alert
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Alert Message\'")]
         public virtual void _1VerifyAge_Gate_Variant13()
         {
-#line 6
+#line 5
 this._1VerifyAge_Gate("\'Edge\'", "DAY", "NONE", "YEAR", "\'immature\'", "\'Alert Message\'", ((string[])(null)));
 #line hidden
         }
@@ -394,7 +394,7 @@ this._1VerifyAge_Gate("\'Edge\'", "DAY", "NONE", "YEAR", "\'immature\'", "\'Aler
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Alert Message\'")]
         public virtual void _1VerifyAge_Gate_Variant14()
         {
-#line 6
+#line 5
 this._1VerifyAge_Gate("\'Edge\'", "NONE", "INVALID_MONTH", "YEAR", "\'mature\'", "\'Alert Message\'", ((string[])(null)));
 #line hidden
         }
@@ -411,7 +411,7 @@ this._1VerifyAge_Gate("\'Edge\'", "NONE", "INVALID_MONTH", "YEAR", "\'mature\'",
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Alert Message\'")]
         public virtual void _1VerifyAge_Gate_Variant15()
         {
-#line 6
+#line 5
 this._1VerifyAge_Gate("\'Edge\'", "NONE", "MONTH", "YEAR", "\'immature\'", "\'Alert Message\'", ((string[])(null)));
 #line hidden
         }
@@ -428,7 +428,7 @@ this._1VerifyAge_Gate("\'Edge\'", "NONE", "MONTH", "YEAR", "\'immature\'", "\'Al
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Alert Message\'")]
         public virtual void _1VerifyAge_Gate_Variant16()
         {
-#line 6
+#line 5
 this._1VerifyAge_Gate("\'Edge\'", "DAY", "NONE", "NONE", "\'mature\'", "\'Alert Message\'", ((string[])(null)));
 #line hidden
         }
@@ -445,7 +445,7 @@ this._1VerifyAge_Gate("\'Edge\'", "DAY", "NONE", "NONE", "\'mature\'", "\'Alert 
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Modal is gone\'")]
         public virtual void _1VerifyAge_Gate_Variant17()
         {
-#line 6
+#line 5
 this._1VerifyAge_Gate("\'Edge\'", "DAY", "MONTH", "YEAR", "\'mature\'", "\'Modal is gone\'", ((string[])(null)));
 #line hidden
         }
@@ -462,7 +462,7 @@ this._1VerifyAge_Gate("\'Edge\'", "DAY", "MONTH", "YEAR", "\'mature\'", "\'Modal
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Alert Message\'")]
         public virtual void _1VerifyAge_Gate_Variant18()
         {
-#line 6
+#line 5
 this._1VerifyAge_Gate("\'Edge\'", "NONE", "MONTH", "NONE", "\'mature\'", "\'Alert Message\'", ((string[])(null)));
 #line hidden
         }
@@ -479,7 +479,7 @@ this._1VerifyAge_Gate("\'Edge\'", "NONE", "MONTH", "NONE", "\'mature\'", "\'Aler
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Alert Message\'")]
         public virtual void _1VerifyAge_Gate_Variant19()
         {
-#line 6
+#line 5
 this._1VerifyAge_Gate("\'Edge\'", "DAY", "INVALID_MONTH", "YEAR", "\'immature\'", "\'Alert Message\'", ((string[])(null)));
 #line hidden
         }
@@ -496,7 +496,7 @@ this._1VerifyAge_Gate("\'Edge\'", "DAY", "INVALID_MONTH", "YEAR", "\'immature\'"
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Alert Message\'")]
         public virtual void _1VerifyAge_Gate_Variant20()
         {
-#line 6
+#line 5
 this._1VerifyAge_Gate("\'Chrome\'", "NONE", "NONE", "YEAR", "\'immature\'", "\'Alert Message\'", ((string[])(null)));
 #line hidden
         }
@@ -513,7 +513,7 @@ this._1VerifyAge_Gate("\'Chrome\'", "NONE", "NONE", "YEAR", "\'immature\'", "\'A
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Alert Message\'")]
         public virtual void _1VerifyAge_Gate_Variant21()
         {
-#line 6
+#line 5
 this._1VerifyAge_Gate("\'Chrome\'", "NONE", "MONTH", "YEAR", "\'immature\'", "\'Alert Message\'", ((string[])(null)));
 #line hidden
         }
@@ -530,7 +530,7 @@ this._1VerifyAge_Gate("\'Chrome\'", "NONE", "MONTH", "YEAR", "\'immature\'", "\'
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Alert Message\'")]
         public virtual void _1VerifyAge_Gate_Variant22()
         {
-#line 6
+#line 5
 this._1VerifyAge_Gate("\'Chrome\'", "DAY", "NONE", "YEAR", "\'immature\'", "\'Alert Message\'", ((string[])(null)));
 #line hidden
         }
@@ -547,7 +547,7 @@ this._1VerifyAge_Gate("\'Chrome\'", "DAY", "NONE", "YEAR", "\'immature\'", "\'Al
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Age Warning\'")]
         public virtual void _1VerifyAge_Gate_Variant23()
         {
-#line 6
+#line 5
 this._1VerifyAge_Gate("\'Chrome\'", "DAY", "MONTH", "YEAR", "\'immature\'", "\'Age Warning\'", ((string[])(null)));
 #line hidden
         }
@@ -564,7 +564,7 @@ this._1VerifyAge_Gate("\'Chrome\'", "DAY", "MONTH", "YEAR", "\'immature\'", "\'A
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Alert Message\'")]
         public virtual void _1VerifyAge_Gate_Variant24()
         {
-#line 6
+#line 5
 this._1VerifyAge_Gate("\'Chrome\'", "DAY", "INVALID_MONTH", "YEAR", "\'immature\'", "\'Alert Message\'", ((string[])(null)));
 #line hidden
         }
@@ -581,7 +581,7 @@ this._1VerifyAge_Gate("\'Chrome\'", "DAY", "INVALID_MONTH", "YEAR", "\'immature\
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Alert Message\'")]
         public virtual void _1VerifyAge_Gate_Variant25()
         {
-#line 6
+#line 5
 this._1VerifyAge_Gate("\'Chrome\'", "NONE", "NONE", "YEAR", "\'mature\'", "\'Alert Message\'", ((string[])(null)));
 #line hidden
         }
@@ -598,7 +598,7 @@ this._1VerifyAge_Gate("\'Chrome\'", "NONE", "NONE", "YEAR", "\'mature\'", "\'Ale
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Alert Message\'")]
         public virtual void _1VerifyAge_Gate_Variant26()
         {
-#line 6
+#line 5
 this._1VerifyAge_Gate("\'Chrome\'", "NONE", "MONTH", "NONE", "\'mature\'", "\'Alert Message\'", ((string[])(null)));
 #line hidden
         }
@@ -615,7 +615,7 @@ this._1VerifyAge_Gate("\'Chrome\'", "NONE", "MONTH", "NONE", "\'mature\'", "\'Al
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Alert Message\'")]
         public virtual void _1VerifyAge_Gate_Variant27()
         {
-#line 6
+#line 5
 this._1VerifyAge_Gate("\'Chrome\'", "DAY", "NONE", "NONE", "\'mature\'", "\'Alert Message\'", ((string[])(null)));
 #line hidden
         }
@@ -632,7 +632,7 @@ this._1VerifyAge_Gate("\'Chrome\'", "DAY", "NONE", "NONE", "\'mature\'", "\'Aler
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Modal is gone\'")]
         public virtual void _1VerifyAge_Gate_Variant28()
         {
-#line 6
+#line 5
 this._1VerifyAge_Gate("\'Chrome\'", "DAY", "MONTH", "YEAR", "\'mature\'", "\'Modal is gone\'", ((string[])(null)));
 #line hidden
         }
@@ -649,7 +649,7 @@ this._1VerifyAge_Gate("\'Chrome\'", "DAY", "MONTH", "YEAR", "\'mature\'", "\'Mod
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Alert Message\'")]
         public virtual void _1VerifyAge_Gate_Variant29()
         {
-#line 6
+#line 5
 this._1VerifyAge_Gate("\'Chrome\'", "NONE", "INVALID_MONTH", "YEAR", "\'mature\'", "\'Alert Message\'", ((string[])(null)));
 #line hidden
         }
@@ -662,7 +662,7 @@ this._1VerifyAge_Gate("\'Chrome\'", "NONE", "INVALID_MONTH", "YEAR", "\'mature\'
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2 Validate About-Us", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 53
+#line 47
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -682,14 +682,14 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 54
+#line 48
  testRunner.When("the User clicks \'menu open\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 55
+#line 49
  testRunner.And("the User clicks \'About Us\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 56
- testRunner.Then("the User observes the \'\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 50
+ testRunner.Then("the User observes the \'4 KIs\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -1,7 +1,6 @@
 ﻿Feature: Age-Verification & About-Us
 Verify that the functionality of said Features are correct.
 
-
 # DATE, MONTH and YEAR are randomly generated indexes.
 Scenario Outline: 1 Verify Age-Gate
 	Given the User is on <Browser>
@@ -44,13 +43,8 @@ Examples:
 	|  'Chrome' | DAY  | MONTH         | YEAR | 'mature'   | 'Modal is gone' |
 	|  'Chrome' | NONE | INVALID_MONTH | YEAR | 'mature'   | 'Alert Message' |
 	
-
-
-	
-
-
-#After last Example, browser won't refresh/clear-cookies
+#After last Example, current-browser won't refresh/clear-cookies
 Scenario: 2 Validate About-Us
 	When the User clicks 'menu open'
 	And the User clicks 'About Us'
-	Then the User observes the ''
+	Then the User observes the '4 KIs'

@@ -9,15 +9,16 @@ namespace AgeVerification_AboutUs.Steps
     **ScenarioContext**
     * 
     *     home-page : PlayTech_Home
+    *     about-us : PlayTech_AboutUs
     *        
     */
     [Binding]
-    public sealed class AgeVerification
+    public sealed class Age_Verification
     {
         private readonly ScenarioContext _scenarioContext;
 
 
-        public AgeVerification(ScenarioContext scenarioContext) {
+        public Age_Verification(ScenarioContext scenarioContext) {
             _scenarioContext = scenarioContext;
         }
 
@@ -36,26 +37,6 @@ namespace AgeVerification_AboutUs.Steps
                 else
                     _scenarioContext.Add("home-page", (new PlayTech_Home(User.WebBrowser)));
             }
-            else
-                throw (new SpecFlowException("Unknown web-page: " + webPage));
-        }
-
-        [Then(@"the User observes the '(.*)'")]
-        public void ThenTheUserObservesThe(string webElement) {
-            //safest way given you can't foresee combination of Gherkin statements:
-            if (_scenarioContext.TryGetValue("home-page", out PlayTech_Home home)) {
-                if (webElement.Equals("Age-Gate Modal"))
-                    home.AgeGateVisible().Should().BeTrue();
-                else if (webElement.Equals("Alert Message"))
-                    home.AlertVisible().Should().BeTrue();
-                else if (webElement.Equals("Modal is gone"))
-                    home.AgeGateVisible().Should().BeFalse();
-                else if (webElement.Equals("Age Warning"))
-                    home.AgeWarningVisible();
-                else
-                    throw (new SpecFlowException("Unknown web element: " + webElement));
-            } else
-                throw (new SpecFlowException("Scenario Context missing: home-page"));
         }
 
         [When(
@@ -85,12 +66,36 @@ namespace AgeVerification_AboutUs.Steps
         [When(@"the User clicks '(.*)'")]
         public void WhenTheUserClicks(string button)
         {
-            if (button.Equals("Enter Site")) { 
-                if (_scenarioContext.TryGetValue("home-page", out PlayTech_Home home))
+            if (_scenarioContext.TryGetValue("home-page", out PlayTech_Home home)) {
+                if (button.Equals("Enter Site"))
                     home.ClickAgeGateSubmit();
-                else
-                    throw (new SpecFlowException("Scenario Context missing: age-gate"));
+                if (button.Equals("menu open"))
+                    home.OpenMenu();        
+                if (button.Equals("About Us"))
+                    home.ClickAboutUsLink();
+            } else
+                throw (new SpecFlowException("Scenario Context missing: home-page"));
+        }
+
+        [Then(@"the User observes the '(.*)'")]
+        public void ThenTheUserObservesThe(string webElement) {
+            //safest way given you can't foresee combination of Gherkin statements:
+            if (_scenarioContext.TryGetValue("home-page", out PlayTech_Home home)) {
+                if (webElement.Equals("Age-Gate Modal"))
+                    home.AgeGateVisible().Should().BeTrue();
+                if (webElement.Equals("Alert Message"))
+                    home.AlertVisible().Should().BeTrue();
+                if (webElement.Equals("Modal is gone"))
+                    home.AgeGateVisible().Should().BeFalse();
+                if (webElement.Equals("Age Warning"))
+                    home.AgeWarningVisible().Should().BeTrue();
+                if (webElement.Equals("4 KIs")) {
+                    _scenarioContext.Add("about-us", (new PlayTech_AboutUs(User.WebBrowser)));
+                    ((PlayTech_AboutUs)_scenarioContext["about-us"]).TitleVisible().Should().BeTrue();
+                }
             }
+            else
+                throw (new SpecFlowException("Scenario Context missing: home-page"));
         }
     }
 }
