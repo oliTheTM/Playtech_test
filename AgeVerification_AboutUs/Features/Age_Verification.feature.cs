@@ -318,7 +318,7 @@ this._1VerifyAge_Gate("\'Firefox\'", "NONE", "INVALID_MONTH", "YEAR", "\'mature\
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 Verify Age-Gate: Variant 10")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Age-Verification & About-Us")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 10")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Browser", "\'Edge\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Browser", "\'Chrome\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Day", "NONE")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Month", "NONE")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "YEAR")]
@@ -327,7 +327,7 @@ this._1VerifyAge_Gate("\'Firefox\'", "NONE", "INVALID_MONTH", "YEAR", "\'mature\
         public virtual void _1VerifyAge_Gate_Variant10()
         {
 #line 5
-this._1VerifyAge_Gate("\'Edge\'", "NONE", "NONE", "YEAR", "\'immature\'", "\'Alert Message\'", ((string[])(null)));
+this._1VerifyAge_Gate("\'Chrome\'", "NONE", "NONE", "YEAR", "\'immature\'", "\'Alert Message\'", ((string[])(null)));
 #line hidden
         }
         
@@ -335,183 +335,13 @@ this._1VerifyAge_Gate("\'Edge\'", "NONE", "NONE", "YEAR", "\'immature\'", "\'Ale
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 Verify Age-Gate: Variant 11")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Age-Verification & About-Us")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 11")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Browser", "\'Edge\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Day", "DAY")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Browser", "\'Chrome\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Day", "NONE")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Month", "MONTH")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "YEAR")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Maturity", "\'immature\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Age Warning\'")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Alert Message\'")]
         public virtual void _1VerifyAge_Gate_Variant11()
-        {
-#line 5
-this._1VerifyAge_Gate("\'Edge\'", "DAY", "MONTH", "YEAR", "\'immature\'", "\'Age Warning\'", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 Verify Age-Gate: Variant 12")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Age-Verification & About-Us")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 12")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Browser", "\'Edge\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Day", "NONE")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Month", "NONE")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "YEAR")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Maturity", "\'mature\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Alert Message\'")]
-        public virtual void _1VerifyAge_Gate_Variant12()
-        {
-#line 5
-this._1VerifyAge_Gate("\'Edge\'", "NONE", "NONE", "YEAR", "\'mature\'", "\'Alert Message\'", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 Verify Age-Gate: Variant 13")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Age-Verification & About-Us")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 13")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Browser", "\'Edge\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Day", "DAY")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Month", "NONE")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "YEAR")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Maturity", "\'immature\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Alert Message\'")]
-        public virtual void _1VerifyAge_Gate_Variant13()
-        {
-#line 5
-this._1VerifyAge_Gate("\'Edge\'", "DAY", "NONE", "YEAR", "\'immature\'", "\'Alert Message\'", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 Verify Age-Gate: Variant 14")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Age-Verification & About-Us")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 14")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Browser", "\'Edge\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Day", "NONE")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Month", "INVALID_MONTH")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "YEAR")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Maturity", "\'mature\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Alert Message\'")]
-        public virtual void _1VerifyAge_Gate_Variant14()
-        {
-#line 5
-this._1VerifyAge_Gate("\'Edge\'", "NONE", "INVALID_MONTH", "YEAR", "\'mature\'", "\'Alert Message\'", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 Verify Age-Gate: Variant 15")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Age-Verification & About-Us")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 15")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Browser", "\'Edge\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Day", "NONE")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Month", "MONTH")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "YEAR")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Maturity", "\'immature\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Alert Message\'")]
-        public virtual void _1VerifyAge_Gate_Variant15()
-        {
-#line 5
-this._1VerifyAge_Gate("\'Edge\'", "NONE", "MONTH", "YEAR", "\'immature\'", "\'Alert Message\'", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 Verify Age-Gate: Variant 16")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Age-Verification & About-Us")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 16")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Browser", "\'Edge\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Day", "DAY")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Month", "NONE")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "NONE")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Maturity", "\'mature\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Alert Message\'")]
-        public virtual void _1VerifyAge_Gate_Variant16()
-        {
-#line 5
-this._1VerifyAge_Gate("\'Edge\'", "DAY", "NONE", "NONE", "\'mature\'", "\'Alert Message\'", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 Verify Age-Gate: Variant 17")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Age-Verification & About-Us")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 17")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Browser", "\'Edge\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Day", "DAY")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Month", "MONTH")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "YEAR")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Maturity", "\'mature\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Modal is gone\'")]
-        public virtual void _1VerifyAge_Gate_Variant17()
-        {
-#line 5
-this._1VerifyAge_Gate("\'Edge\'", "DAY", "MONTH", "YEAR", "\'mature\'", "\'Modal is gone\'", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 Verify Age-Gate: Variant 18")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Age-Verification & About-Us")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 18")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Browser", "\'Edge\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Day", "NONE")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Month", "MONTH")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "NONE")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Maturity", "\'mature\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Alert Message\'")]
-        public virtual void _1VerifyAge_Gate_Variant18()
-        {
-#line 5
-this._1VerifyAge_Gate("\'Edge\'", "NONE", "MONTH", "NONE", "\'mature\'", "\'Alert Message\'", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 Verify Age-Gate: Variant 19")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Age-Verification & About-Us")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 19")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Browser", "\'Edge\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Day", "DAY")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Month", "INVALID_MONTH")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "YEAR")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Maturity", "\'immature\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Alert Message\'")]
-        public virtual void _1VerifyAge_Gate_Variant19()
-        {
-#line 5
-this._1VerifyAge_Gate("\'Edge\'", "DAY", "INVALID_MONTH", "YEAR", "\'immature\'", "\'Alert Message\'", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 Verify Age-Gate: Variant 20")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Age-Verification & About-Us")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 20")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Browser", "\'Chrome\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Day", "NONE")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Month", "NONE")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "YEAR")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Maturity", "\'immature\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Alert Message\'")]
-        public virtual void _1VerifyAge_Gate_Variant20()
-        {
-#line 5
-this._1VerifyAge_Gate("\'Chrome\'", "NONE", "NONE", "YEAR", "\'immature\'", "\'Alert Message\'", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 Verify Age-Gate: Variant 21")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Age-Verification & About-Us")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 21")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Browser", "\'Chrome\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Day", "NONE")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Month", "MONTH")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "YEAR")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Maturity", "\'immature\'")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Alert Message\'")]
-        public virtual void _1VerifyAge_Gate_Variant21()
         {
 #line 5
 this._1VerifyAge_Gate("\'Chrome\'", "NONE", "MONTH", "YEAR", "\'immature\'", "\'Alert Message\'", ((string[])(null)));
@@ -519,16 +349,16 @@ this._1VerifyAge_Gate("\'Chrome\'", "NONE", "MONTH", "YEAR", "\'immature\'", "\'
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 Verify Age-Gate: Variant 22")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 Verify Age-Gate: Variant 12")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Age-Verification & About-Us")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 22")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 12")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Browser", "\'Chrome\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Day", "DAY")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Month", "NONE")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "YEAR")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Maturity", "\'immature\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Alert Message\'")]
-        public virtual void _1VerifyAge_Gate_Variant22()
+        public virtual void _1VerifyAge_Gate_Variant12()
         {
 #line 5
 this._1VerifyAge_Gate("\'Chrome\'", "DAY", "NONE", "YEAR", "\'immature\'", "\'Alert Message\'", ((string[])(null)));
@@ -536,16 +366,16 @@ this._1VerifyAge_Gate("\'Chrome\'", "DAY", "NONE", "YEAR", "\'immature\'", "\'Al
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 Verify Age-Gate: Variant 23")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 Verify Age-Gate: Variant 13")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Age-Verification & About-Us")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 23")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 13")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Browser", "\'Chrome\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Day", "DAY")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Month", "MONTH")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "YEAR")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Maturity", "\'immature\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Age Warning\'")]
-        public virtual void _1VerifyAge_Gate_Variant23()
+        public virtual void _1VerifyAge_Gate_Variant13()
         {
 #line 5
 this._1VerifyAge_Gate("\'Chrome\'", "DAY", "MONTH", "YEAR", "\'immature\'", "\'Age Warning\'", ((string[])(null)));
@@ -553,16 +383,16 @@ this._1VerifyAge_Gate("\'Chrome\'", "DAY", "MONTH", "YEAR", "\'immature\'", "\'A
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 Verify Age-Gate: Variant 24")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 Verify Age-Gate: Variant 14")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Age-Verification & About-Us")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 24")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 14")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Browser", "\'Chrome\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Day", "DAY")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Month", "INVALID_MONTH")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "YEAR")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Maturity", "\'immature\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Alert Message\'")]
-        public virtual void _1VerifyAge_Gate_Variant24()
+        public virtual void _1VerifyAge_Gate_Variant14()
         {
 #line 5
 this._1VerifyAge_Gate("\'Chrome\'", "DAY", "INVALID_MONTH", "YEAR", "\'immature\'", "\'Alert Message\'", ((string[])(null)));
@@ -570,16 +400,16 @@ this._1VerifyAge_Gate("\'Chrome\'", "DAY", "INVALID_MONTH", "YEAR", "\'immature\
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 Verify Age-Gate: Variant 25")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 Verify Age-Gate: Variant 15")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Age-Verification & About-Us")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 25")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 15")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Browser", "\'Chrome\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Day", "NONE")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Month", "NONE")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "YEAR")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Maturity", "\'mature\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Alert Message\'")]
-        public virtual void _1VerifyAge_Gate_Variant25()
+        public virtual void _1VerifyAge_Gate_Variant15()
         {
 #line 5
 this._1VerifyAge_Gate("\'Chrome\'", "NONE", "NONE", "YEAR", "\'mature\'", "\'Alert Message\'", ((string[])(null)));
@@ -587,16 +417,16 @@ this._1VerifyAge_Gate("\'Chrome\'", "NONE", "NONE", "YEAR", "\'mature\'", "\'Ale
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 Verify Age-Gate: Variant 26")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 Verify Age-Gate: Variant 16")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Age-Verification & About-Us")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 26")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 16")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Browser", "\'Chrome\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Day", "NONE")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Month", "MONTH")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "NONE")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Maturity", "\'mature\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Alert Message\'")]
-        public virtual void _1VerifyAge_Gate_Variant26()
+        public virtual void _1VerifyAge_Gate_Variant16()
         {
 #line 5
 this._1VerifyAge_Gate("\'Chrome\'", "NONE", "MONTH", "NONE", "\'mature\'", "\'Alert Message\'", ((string[])(null)));
@@ -604,16 +434,16 @@ this._1VerifyAge_Gate("\'Chrome\'", "NONE", "MONTH", "NONE", "\'mature\'", "\'Al
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 Verify Age-Gate: Variant 27")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 Verify Age-Gate: Variant 17")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Age-Verification & About-Us")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 27")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 17")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Browser", "\'Chrome\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Day", "DAY")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Month", "NONE")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "NONE")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Maturity", "\'mature\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Alert Message\'")]
-        public virtual void _1VerifyAge_Gate_Variant27()
+        public virtual void _1VerifyAge_Gate_Variant17()
         {
 #line 5
 this._1VerifyAge_Gate("\'Chrome\'", "DAY", "NONE", "NONE", "\'mature\'", "\'Alert Message\'", ((string[])(null)));
@@ -621,16 +451,16 @@ this._1VerifyAge_Gate("\'Chrome\'", "DAY", "NONE", "NONE", "\'mature\'", "\'Aler
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 Verify Age-Gate: Variant 28")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 Verify Age-Gate: Variant 18")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Age-Verification & About-Us")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 28")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 18")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Browser", "\'Chrome\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Day", "DAY")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Month", "MONTH")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "YEAR")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Maturity", "\'mature\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Modal is gone\'")]
-        public virtual void _1VerifyAge_Gate_Variant28()
+        public virtual void _1VerifyAge_Gate_Variant18()
         {
 #line 5
 this._1VerifyAge_Gate("\'Chrome\'", "DAY", "MONTH", "YEAR", "\'mature\'", "\'Modal is gone\'", ((string[])(null)));
@@ -638,16 +468,16 @@ this._1VerifyAge_Gate("\'Chrome\'", "DAY", "MONTH", "YEAR", "\'mature\'", "\'Mod
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 Verify Age-Gate: Variant 29")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 Verify Age-Gate: Variant 19")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Age-Verification & About-Us")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 29")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Variant 19")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Browser", "\'Chrome\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Day", "NONE")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Month", "INVALID_MONTH")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "YEAR")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Maturity", "\'mature\'")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Effect", "\'Alert Message\'")]
-        public virtual void _1VerifyAge_Gate_Variant29()
+        public virtual void _1VerifyAge_Gate_Variant19()
         {
 #line 5
 this._1VerifyAge_Gate("\'Chrome\'", "NONE", "INVALID_MONTH", "YEAR", "\'mature\'", "\'Alert Message\'", ((string[])(null)));

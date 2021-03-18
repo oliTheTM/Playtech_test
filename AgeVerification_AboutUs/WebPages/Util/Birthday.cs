@@ -26,51 +26,50 @@ namespace AgeVerification_and_AboutUs.WebPages.Util
         public static int[] MakeMature(bool isMature)
         {
             int[] date = new int[3];
+            //Less/Equal:
             if (isMature) {
-                date[2] = Xu.Next(18, 100);
-                if (date[2] == 18)
-                {
+                //valid years
+                date[2] = Xu.Next(19, 100);
+                //limit year: 2003 = 2021 - (19 - 1)
+                if (date[2] == 19) {
+                    //month upper-bounded
                     date[1] = Xu.Next(1, DateTime.Now.Month);
-                    if (date[1] == DateTime.Now.Month)
+                    if (date[1] == DateTime.Now.Month) {
+                        //day upper-bounded
                         date[0] = Xu.Next(1, DateTime.Now.Day);
+                        return date;
+                    }
                 }
-                else
+                else//free
                     date[1] = Xu.Next(1, 12);
                 date[0] = Xu.Next(1, DateTime.DaysInMonth(
-                    (DateTime.Now.Year - date[2]),
+                    (DateTime.Now.Year - date[2] + 1),
                     date[1]
                 ));
                 return date;
             }
+            //Greater:
             else {
-                date[2] = Xu.Next(1, 18);
-                if (date[2] == 18)
-                {
-                    date[1] = Xu.Next(DateTime.Now.Month, 12);
-                    if (date[1] == DateTime.Now.Month)
-                    {
+                date[2] = Xu.Next(1, 19);
+                if (date[2] == 19) {
+                    //month lower-bounded
+                    date[1] = Xu.Next((DateTime.Now.Month + (((DateTime.Now.Month < 12)) ? 1 : 0)), 12);
+                    //special case: December
+                    if (date[1] == DateTime.Now.Month) {
                         if ((DateTime.Now.Day + 1) < DateTime.DaysInMonth(
-                            (DateTime.Now.Year - date[2]), date[1]
-                        ))
+                            (DateTime.Now.Year - date[2] + 1), date[1]
+                        )) {//day lower-bounded
                             date[0] = Xu.Next(
                                 (DateTime.Now.Day + 1),
-                                DateTime.DaysInMonth((DateTime.Now.Year - date[2]), date[1])
+                                DateTime.DaysInMonth((DateTime.Now.Year - date[2] + 1), date[1])
                             );
-                        else
-                            date[0] = DateTime.DaysInMonth(
-                                (DateTime.Now.Year - date[2]),
-                                date[1]
-                            );
+                            return date;
+                        }
                     }
-                    else
-                        date[0] = Xu.Next(1, DateTime.DaysInMonth(
-                            (DateTime.Now.Year - date[2]),
-                            date[1]
-                        ));
-                    return date;
                 }
-                date[1] = Xu.Next(1, 12);
-                date[0] = Xu.Next(1, DateTime.DaysInMonth((DateTime.Now.Year - date[2]), date[1]));
+                else//free
+                    date[1] = Xu.Next(1, 12);
+                date[0] = Xu.Next(1, DateTime.DaysInMonth((DateTime.Now.Year - date[2] + 1), date[1]));
                 return date;
             }
         }
