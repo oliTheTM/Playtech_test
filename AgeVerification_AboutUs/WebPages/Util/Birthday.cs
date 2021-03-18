@@ -75,14 +75,16 @@ namespace AgeVerification_and_AboutUs.WebPages.Util
         }
         public static void MakeInvalidMonth(ref int[] date)
         {
+            //No. days in chosen month
             int days = DateTime.DaysInMonth(
-                (DateTime.Now.Year + date[2]),
+                (DateTime.Now.Year - date[2] + 1),
                 date[1]
             );
-            if (days == 31)
+            if (days == 31)//pick month with less days
                 date[1] = MONTHS_LESS_THAN_31[Xu.Next(MONTHS_LESS_THAN_31.Length - 1)];
-            days = DateTime.DaysInMonth((DateTime.Now.Year - date[2]), date[1]);
-            date[0] = days + (date[0] % (31 - days - 1));
+            days = DateTime.DaysInMonth((DateTime.Now.Year - date[2] + 1), date[1]);
+            //ensure the day larger than month's days
+            date[0] = days + 1 + (date[0] % (31 - days));
         }
     }
 }
