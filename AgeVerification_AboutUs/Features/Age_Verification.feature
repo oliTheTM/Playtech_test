@@ -22,16 +22,6 @@ Examples:
 	| 'Firefox' | DAY  | MONTH         | YEAR | 'immature' | 'Age Warning'   |
 	| 'Firefox' | DAY  | INVALID_MONTH | YEAR | 'immature' | 'Alert Message' |	
 	| 'Firefox' | NONE | INVALID_MONTH | YEAR | 'mature'   | 'Alert Message' |
-#	|  'Edge'   | NONE | NONE          | YEAR | 'immature' | 'Alert Message' |
-#	|  'Edge'   | DAY  | MONTH         | YEAR | 'immature' | 'Age Warning'   |
-#	|  'Edge'   | NONE | NONE          | YEAR | 'mature'   | 'Alert Message' |
-#	|  'Edge'   | DAY  | NONE          | YEAR | 'immature' | 'Alert Message' |
-#	|  'Edge'   | NONE | INVALID_MONTH | YEAR | 'mature'   | 'Alert Message' |
-#	|  'Edge'   | NONE | MONTH         | YEAR | 'immature' | 'Alert Message' |
-#	|  'Edge'   | DAY  | NONE          | NONE | 'mature'   | 'Alert Message' |
-#	|  'Edge'   | DAY  | MONTH         | YEAR | 'mature'   | 'Modal is gone' |
-#	|  'Edge'   | NONE | MONTH         | NONE | 'mature'   | 'Alert Message' |
-#	|  'Edge'   | DAY  | INVALID_MONTH | YEAR | 'immature' | 'Alert Message' |
 	|  'Chrome' | NONE | NONE          | YEAR | 'immature' | 'Alert Message' |
 	|  'Chrome' | NONE | MONTH         | YEAR | 'immature' | 'Alert Message' |
 	|  'Chrome' | DAY  | NONE          | YEAR | 'immature' | 'Alert Message' |
@@ -42,6 +32,16 @@ Examples:
 	|  'Chrome' | DAY  | NONE          | NONE | 'mature'   | 'Alert Message' |
 	|  'Chrome' | DAY  | MONTH         | YEAR | 'mature'   | 'Modal is gone' |
 	|  'Chrome' | NONE | INVALID_MONTH | YEAR | 'mature'   | 'Alert Message' |
+	|  'Edge'   | NONE | NONE          | YEAR | 'immature' | 'Alert Message' |
+	|  'Edge'   | DAY  | MONTH         | YEAR | 'immature' | 'Age Warning'   |
+	|  'Edge'   | NONE | NONE          | YEAR | 'mature'   | 'Alert Message' |
+	|  'Edge'   | DAY  | NONE          | YEAR | 'immature' | 'Alert Message' |
+	|  'Edge'   | NONE | INVALID_MONTH | YEAR | 'mature'   | 'Alert Message' |
+	|  'Edge'   | NONE | MONTH         | YEAR | 'immature' | 'Alert Message' |
+	|  'Edge'   | DAY  | NONE          | NONE | 'mature'   | 'Alert Message' |
+	|  'Edge'   | DAY  | MONTH         | YEAR | 'mature'   | 'Modal is gone' |
+	|  'Edge'   | NONE | MONTH         | NONE | 'mature'   | 'Alert Message' |
+	|  'Edge'   | DAY  | INVALID_MONTH | YEAR | 'immature' | 'Alert Message' |
 	
 #After last Example, current-browser won't refresh/clear-cookies
 Scenario: 2 Validate About-Us
